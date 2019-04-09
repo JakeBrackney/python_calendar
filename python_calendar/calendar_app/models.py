@@ -10,5 +10,5 @@ class Event(models.Model):
 	description = models.TextField()
 	location = models.CharField(max_length=400)
 
-    def __str__(self):
-        return self.title
+	def __str__(self):
+		return self.title
