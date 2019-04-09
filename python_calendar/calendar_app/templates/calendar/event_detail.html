@@ -1,0 +1,10 @@
+{% extends 'calendar/base.html' %}
+
+{% block content %}
+    <h2>Event: {{ event.title }} </h2>
+    <h4>Start: {{ event.startDate }} </h4>
+    <h4>End: {{ event.endDate }} </h4>
+    <h4>Description: {{ event.description }} </h4>
+    <h4>Location: {{ event.location }} </h4>
+
+{% endblock %}
