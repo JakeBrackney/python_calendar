@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Calendar</title>
+    </head>
+    <body>
+        <h1>Calendar</h1>
+        <nav>
+            <div class="user-info">
+                {% if user.is_authenticated %}
+                    Welcome, {{ user.username }}
+                    <a href="{% url 'logout' %}">Signout</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'signup' %}">Signup</a>
+                {% endif %}
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
