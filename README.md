@@ -6,7 +6,7 @@ The app is under construction, but feel free to peek through our code.
 
 ### Contributors
 
-[Jake Brackney](https://github.com/JakeBrackney)
-[Lindsay Urchyk](https://github.com/urchykli)
-[Courtney Tyler](https://github.com/courtneyltyler)
+- [Jake Brackney](https://github.com/JakeBrackney)
+- [Lindsay Urchyk](https://github.com/urchykli)
+- [Courtney Tyler](https://github.com/courtneyltyler)
 
