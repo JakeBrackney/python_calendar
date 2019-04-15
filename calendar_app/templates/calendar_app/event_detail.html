@@ -2,9 +2,9 @@
 
 {% block content %}
     <h2>Event: {{ event.title }} </h2>
-    <h4>Start: {{ event.startDate }} </h4>
-    <h4>End: {{ event.endDate }} </h4>
-    <h4>Description: {{ event.description }} </h4>
+    <h4>Start: {{ event.startDate }} {{ event.startTime }}</h4>
+    <h4>End: {{ event.endDate }} {{ event.endTime }}</h4>
+    <h4>Description: {{ event.description }}</h4>
     <h4>Location: {{ event.location }} </h4>
     <p><a href="{% url 'event_edit' pk=event.pk %}"><button>Edit</button></a></p>
     <p><a href="{% url 'event_form' %}"><button>New Event</button></a></p>

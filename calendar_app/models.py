@@ -4,8 +4,10 @@ from datetime import datetime
 
 class Event(models.Model):
 	title = models.CharField(max_length=100)
-	startDate = models.DateTimeField(default=datetime.now)
-	endDate = models.DateTimeField(blank=True)
+	startDate = models.DateField(default=datetime.now)
+	startTime = models.TimeField(default=datetime.now)
+	endDate = models.DateField(blank=True)
+	endTime = models.TimeField(blank=True)
 	# startTime = models.TimeField()
 	# endTime = models.TimeField()
 	description = models.TextField()
