@@ -6,7 +6,7 @@
     <h4>End: {{ event.endDate }} </h4>
     <h4>Description: {{ event.description }} </h4>
     <h4>Location: {{ event.location }} </h4>
-
-     <a href="{% url 'event_form' %}"><button>New Event</button></a>
+    <p><a href="{% url 'event_edit' pk=event.pk %}"><button>Edit</button></a></p>
+     <p><a href="{% url 'event_form' %}"><button>New Event</button></a></p>
 
 {% endblock %}

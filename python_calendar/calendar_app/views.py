@@ -11,6 +11,18 @@ def event_detail(request, pk):
     event = Event.objects.get(id=pk)
     return render(request, 'calendar_app/event_detail.html', {'event': event})
 
+@login_required
+def event_edit(request, pk):
+    event = Event.objects.get(id=pk)
+    if request.method == 'POST':
+        form = EventForm(request.POST, instance=event)
+        if form.is_valid():
+            event = form.save()
+            return redirect('event_detail', pk = event.pk)
+    else:
+        form = EventForm(instance=event)
+    return render(request, 'calendar_app/event_form.html', {'form' : form})
+
 def index(request):
     return render(request, 'calendar_app/base.html')
 
