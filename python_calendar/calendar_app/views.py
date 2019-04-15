@@ -56,8 +56,8 @@ def event_edit(request, pk):
 
 @login_required
 def event_delete(request, pk):
-    event = Event.objects.get(id=pk).delete()
-    return render('calendar_app/event_form.html')
+    Event.objects.get(id=pk).delete()
+    return redirect('event_form')
 
 # def sign_up(request):
 #     if request.method == 'POST':
