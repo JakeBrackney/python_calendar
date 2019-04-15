@@ -1,12 +1,13 @@
-{% extends "calendar_app/base.html" %}
-
 {% block content %}
 
 <form method="post" action="{% url 'signup' %}">
     {% csrf_token %}
-    {{form.as_p}}
+    {% if form.errors %}
+    <p>There are errors in the form!</p>
+    {% endif %}
 
-    <input type="submit" value="Sign Up" />
+    {{ form }}
+    <input type="submit" value="signup">
 </form>
 
 {% endblock %}

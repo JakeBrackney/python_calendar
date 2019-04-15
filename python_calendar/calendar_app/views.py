@@ -11,6 +11,11 @@ def event_detail(request, pk):
 def index(request):
     return render(request, 'calendar_app/base.html')
 
+def signup(request):
+    form = UserCreationForm
+    context = {'form' : form}
+    return render(request, 'registration/signup.html', context)
+
 # def sign_up(request):
 #     if request.method == 'POST':
 #         form = UserCreationForm(request.POST)
