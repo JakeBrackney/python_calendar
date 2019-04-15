@@ -11,7 +11,7 @@ def sign_up(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('artist_list')
+            return redirect('/')
     else:
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', {'form': form})
