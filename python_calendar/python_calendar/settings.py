@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'calendar_app',
     'django_extensions',
-    'accounts',
 ]
 
 LOGIN_REDIRECT_URL = '/'
