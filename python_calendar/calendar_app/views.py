@@ -3,7 +3,10 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 from .models import Event
+from django.contrib.auth.decorators import login_required
+from .forms import EventForm
 
+@login_required 
 def event_detail(request, pk):
     event = Event.objects.get(id=pk)
     return render(request, 'calendar_app/event_detail.html', {'event': event})
@@ -27,6 +30,17 @@ def signup(request):
 
     context = {'form' : form}
     return render(request, 'registration/signup.html', context)
+
+@login_required
+def event_create(request):
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            event = form.save()
+            return redirect('event_detail', pk=event.pk)
+    else:
+        form = EventForm()
+    return render(request, 'calendar_app/event_form.html', {'form': form})
 
 # def sign_up(request):
 #     if request.method == 'POST':
