@@ -10,6 +10,7 @@
                     Welcome, {{ user.username }}
                     <a href="{% url 'logout' %}">Signout</a>
                 {% else %}
+                    <h2>You are not authorized to view this page.</h2>
                     <a href="{% url 'login' %}">Login</a>
                     <a href="{% url 'signup' %}">Signup</a>
                 {% endif %}
