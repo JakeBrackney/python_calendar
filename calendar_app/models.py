@@ -5,10 +5,12 @@ from django.utils.timezone import now
 
 class Event(models.Model):
 	title = models.CharField(max_length=100)
-	startDate = models.DateField(("Date"), default=date.today)
-	startTime = models.TimeField(default=now)
-	endDate = models.DateField(blank=True)
-	endTime = models.TimeField(blank=True)
+	start_time = models.DateTimeField()
+	end_time = models.DateTimeField()
+	# startDate = models.DateField(("Date"), default=date.today)
+	# startTime = models.TimeField(default=now)
+	# endDate = models.DateField(blank=True)
+	# endTime = models.TimeField(blank=True)
 	# startTime = models.TimeField()
 	# endTime = models.TimeField()
 	description = models.TextField()
