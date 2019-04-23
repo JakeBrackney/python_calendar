@@ -6,22 +6,23 @@ class EventForm(forms.ModelForm):
 
     class Meta:
         model = Event
-        fields = ('title', 'startDate', 'startTime', 'endDate', 'endTime', 'description', 'location')
+        fields = ('title', 'start_time', 'end_time', 'description', 'location')
 
-    startDate = forms.DateField(initial=date.today,
-    widget=forms.DateInput(format='%m/%d/%Y'),
+    # startDate = forms.DateField(initial=date.today,
+    # widget=forms.DateInput(format='%m/%d/%Y'),
+    # )
+
+    start_time = forms.DateTimeField(initial=(datetime.now().time),
+    widget=forms.DateTimeInput(format='%m/%d/%Y %I:%M %p'),
+        input_formats=('%m/%d/%Y %I:%M %p', )
     )
 
-    startTime = forms.TimeField(initial=(datetime.now().time),
-    widget=forms.TimeInput(format='%I:%M %p')
-    )
+    # endDate = forms.DateField(
+    # widget=forms.DateInput(format='%m/%d/%Y'),
+    # input_formats=('%m/%d/%Y', )
+    # )
 
-    endDate = forms.DateField(
-    widget=forms.DateInput(format='%m/%d/%Y'),
-    input_formats=('%m/%d/%Y', )
-    )
-
-    endTime = forms.TimeField(
-    widget=forms.TimeInput(format='%I:%M %p'),
-    input_formats=('%I:%M %p', )
+    end_time = forms.DateTimeField(
+    widget=forms.DateTimeInput(format='%m/%d/%Y %I:%M %p'),
+    input_formats=('%m/%d/%Y %I:%M %p', )
     )
