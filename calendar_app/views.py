@@ -35,7 +35,7 @@ class CalendarView(generic.ListView):
 def get_date(req_day):
     if req_day:
         year, month = (int(x) for x in req_day.split('-'))
-        return date(year, month, day=1)
+        return date(year, month, day=0)
     return datetime.today()
 
 def index(request):
