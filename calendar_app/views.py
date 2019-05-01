@@ -75,7 +75,7 @@ def event_create(request):
         form = EventForm(request.POST)
         if form.is_valid():
             event = form.save()
-            return redirect('event_detail', pk=event.pk)
+            return redirect('calendar')
     else:
         form = EventForm()
     return render(request, 'calendar_app/event_form.html', {'form': form})
@@ -100,7 +100,7 @@ def event_edit(request, pk):
 @login_required
 def event_delete(request, pk):
     Event.objects.get(id=pk).delete()
-    return redirect('event_form')
+    return redirect('calendar')
 
 # def sign_up(request):
 #     if request.method == 'POST':
