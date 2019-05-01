@@ -17,7 +17,8 @@ class Calendar(HTMLCalendar):
 		d = ''
 		for event in events_per_day:
 			# re-work this to make each LI a link to /event/_id
-			d += f'<li><a href="/event_detail/<int:pk>">{event.title}</a></li>'
+			d += f'<li><a href="/event/<int:pk>">{event.title}</a></li>'
+			
 			
 
 		if day != 0:
