@@ -9,5 +9,6 @@ urlpatterns = [
     path('event/<int:pk>', views.event_detail, name='event_detail'),
     path('event/<int:pk>/event_edit', views.event_edit, name='event_edit'),
     path('event/<int:pk>/event_delete', views.event_delete, name='event_delete'),
-    url(r'^calendar/$', views.CalendarView.as_view(), name='calendar'), # here
+    url(r'^calendar/$', views.CalendarView.as_view(), name='calendar'),
+    url(r'^calendar/event/<int:pk>', views.event_detail, name='event_detail'), # here
 ]
