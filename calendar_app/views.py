@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-from datetime import datetime
 import calendar
 from django.http import HttpResponse
 from django.views import generic
@@ -12,7 +11,7 @@ from .models import Event
 from .utils import Calendar
 from django.contrib.auth.decorators import login_required
 from .forms import EventForm
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from calendar import HTMLCalendar
 
 # from https://www.huiwenteo.com/normal/2018/07/24/django-calendar.html
@@ -22,7 +21,7 @@ class CalendarView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        d = get_date(self.request.GET.get('day', None))
+        d = get_date(self.request.GET.get('month', None))
         context['prev_month'] = prev_month(d)
         context['next_month'] = next_month(d)
         cal = Calendar(d.year, d.month)
@@ -31,10 +30,10 @@ class CalendarView(generic.ListView):
         return context
 
 # from https://www.huiwenteo.com/normal/2018/07/24/django-calendar.html
-def get_date(req_day):
-    if req_day:
-        year, month = (int(x) for x in req_day.split('-'))
-        return date(year, month, day=0)
+def get_date(req_month):
+    if req_month:
+        year, month = (int(x) for x in req_month.split('-'))
+        return date(year, month, day=1)
     return datetime.today()
 
 def prev_month(d):
