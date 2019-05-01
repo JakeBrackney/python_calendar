@@ -2,5 +2,10 @@
 
 {% block content %}
 <p><a href="{% url 'event_form' %}"><button>New Event</button></a></p>
+<div class="clearfix"></div>
+	<a class="btn btn-info left" href="{% url 'calendar' %}?{{ prev_month }}"> Previous Month </a>
+	<a class="btn btn-info right" href="{% url 'calendar' %}?{{ next_month }}"> Next Month </a>
+</div>
+
 {{ calendar }}
 {% endblock %}
