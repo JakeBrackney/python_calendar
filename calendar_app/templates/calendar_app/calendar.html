@@ -1,5 +1,6 @@
 {% extends 'calendar_app/base.html' %}
 
 {% block content %}
+<p><a href="{% url 'event_form' %}"><button class='button'>New Event</button></a></p>
 {{ calendar }}
 {% endblock %}
