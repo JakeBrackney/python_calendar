@@ -1,11 +1,16 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 .calendar {
   width: 98%;
   margin: auto;
   font-size: 13px;
+  color: #7A7978;
 }
 
 .calendar tr, .calendar td {
-  border: 1px solid black;
+  border: 1px solid #7A7978;
 }
 
 .calendar th {
@@ -20,12 +25,19 @@
   padding: 20px 0px 0px 5px;
 }
 
+.left, .right {
+  display: flex;
+  justify-content: space-between 
+}
+
 .month {
   font-size: 25px;
 }
 
 .date {
   font-size: 16px;
+  margin-top: 5px;
+  position: absolute;
 }
 
 ul {
@@ -33,8 +45,16 @@ ul {
   padding: 0px 5px 0px 20px;
 }
 
+li {
+  list-style-type: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px;
+  background-color: #90FFDC
+}
+
 a {
-  color: red;
+  color: #7A7978;
 }
 .event-form {
   color: black;
