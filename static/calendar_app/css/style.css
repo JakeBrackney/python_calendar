@@ -23,16 +23,26 @@ h1 {
 } */
 
 .event-form {
-  max-width: 25%;
+  max-width: 30%;
   border-radius: 5px;
   display: block;
   background-color: #8AC4FF;
   padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 auto;
+
 }
 
 .event-form > p {
   color: #7A7978;
   font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel {
+  display: flex;
+  justify-content: space-between;
 }
 
 .calendar {
@@ -40,6 +50,7 @@ h1 {
   margin: 0 auto;
   font-size: 13px;
   color: #7A7978;
+  
 }
 
 .calendar tr, .calendar td {
@@ -102,3 +113,7 @@ a {
 .event-form {
   color: black;
 }
+
+/* .inputs {
+  margin-left: 20px;
+} */

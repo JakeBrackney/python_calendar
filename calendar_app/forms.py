@@ -11,11 +11,11 @@ class EventForm(ModelForm):
         fields = ('title', 'start_time', 'end_time', 'description', 'location')
 
     start_time = forms.DateTimeField(initial=(datetime.datetime.now().time),
-    widget=forms.DateTimeInput(attrs={'type':'datetime-local', 'value':'datetime.now().time'}, format='%m/%d/%Y %I:%M %p')
+    widget=forms.DateTimeInput(attrs={'type':'datetime-local', 'value':'datetime.now().time', 'class':"inputs"}, format='%m/%d/%Y %I:%M %p')
     )
 
     end_time = forms.DateTimeField(initial=(datetime.datetime.now().time),
-    widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}, format='%m/%d/%Y %I:%M %p')
+    widget=forms.DateTimeInput(attrs={'type': 'datetime-local', 'class':"inputs"}, format='%m/%d/%Y %I:%M %p')
     )
 
     def __init__(self, *args, **kwargs):
