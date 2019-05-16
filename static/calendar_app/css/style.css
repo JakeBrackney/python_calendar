@@ -13,7 +13,7 @@ h1 {
   padding-right: 1.2rem
 }
 
-p {
+.newEvent {
   display: flex;
   justify-content: flex-end;
   margin: inherit;
@@ -85,4 +85,5 @@ a {
 }
 .event-form {
   color: black;
+  justify-content: space-between;
 }
