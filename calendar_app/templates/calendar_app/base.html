@@ -19,7 +19,7 @@
     <nav>
         <div class="user-info">
             {% if user.is_authenticated %}
-                Welcome, {{ user.username }}
+                Welcome, {{ user.username }} </br>
                 <a href="{% url 'logout' %}">Signout</a>
             {% else %}
                 <h2>You are not authorized to view this page.</h2>
