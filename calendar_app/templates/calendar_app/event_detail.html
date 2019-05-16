@@ -1,14 +1,16 @@
 {% extends 'calendar_app/base.html' %}
 
 {% block content %}
-    <h2>Event: {{ event.title }} </h2>
+<div class='eventDetail'>
+    <h1>deets</h1>
+    <h2> {{ event.title }}</h2>
     <h4>Start: {{ event.start_time }}</h4>
     <h4>End: {{ event.end_time }}</h4>
     <h4>Description: {{ event.description }}</h4>
     <h4>Location: {{ event.location }} </h4>
-    <p><a href="{% url 'event_edit' pk=event.pk %}"><button>Edit</button></a></p>
-    <p><a href="{% url 'event_form' %}"><button>New Event</button></a></p>
-    <p><a href="{% url 'event_delete' pk=event.pk  %}"><button>Delete</button></a></p>
-    <p><a href="{% url 'calendar' %}"><button>Calendar</button></a></p>
-
+    <p class="eventButtons"><a href="{% url 'event_edit' pk=event.pk %}"><button>Edit</button></a>
+    <a href="{% url 'event_form' %}"><button>New Event</button></a></p>
+    <p class="eventButtons"><a href="{% url 'event_delete' pk=event.pk  %}"><button>Delete</button></a>
+    <a href="{% url 'calendar' %}"><button>Calendar</button></a></p>
+</div>
 {% endblock %}
