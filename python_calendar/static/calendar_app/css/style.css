@@ -22,15 +22,27 @@ h1 {
   text-align: center;
 } */
 
-.event-form {
-  max-width: 30%;
+.event-form, .eventDetail {
+  max-width: 36%;
   border-radius: 5px;
   display: block;
   background-color: #8AC4FF;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 0 auto;
+  margin: 25px auto;
 
+}
+.eventButtons {
+  display: flex;
+  justify-content: space-between;
+}
+.eventDetail > h4 {
+  text-align: center;
+  color: #7A7978;
+}
+
+.eventDetail > h2 {
+  color: #7A7978;
 }
 
 .event-form > p {
