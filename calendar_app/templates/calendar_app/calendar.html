@@ -1,7 +1,7 @@
 {% extends 'calendar_app/base.html' %}
 
 {% block content %}
-<p><a href="{% url 'event_form' %}"><button>New Event</button></a></p>
+<p class='nav'><a href="{% url 'event_form' %}"><button>New Event</button></a></p>
 <div class="button-container">
 	<a class="btn btn-info left" href="{% url 'calendar' %}?{{ prev_month }}"> Previous Month </a>
 	<a class="btn btn-info right" href="{% url 'calendar' %}?{{ next_month }}"> Next Month </a>

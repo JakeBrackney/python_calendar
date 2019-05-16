@@ -13,10 +13,26 @@ h1 {
   padding-right: 1.2rem
 }
 
-p {
+.nav {
   display: flex;
   justify-content: flex-end;
   margin: inherit;
+}
+/* form {
+  text-align: center;
+} */
+
+.event-form {
+  max-width: 25%;
+  border-radius: 5px;
+  display: block;
+  background-color: #8AC4FF;
+  padding: 10px;
+}
+
+.event-form > p {
+  color: #7A7978;
+  font-size: 18px;
 }
 
 .calendar {
