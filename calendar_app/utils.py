@@ -12,18 +12,27 @@ class Calendar(HTMLCalendar):
 
 	# formats a day as a td
 	# filter events by day
+	# include multi-day events by start time, end time, and range in between start and end time
 	def formatday(self, day, events):
 		events_per_day = events.filter(start_time__day=day)
+		multi_day_event = events.filter(end_time__day=day)
 		d = ''
 		for event in events_per_day:
 			# re-work this to make each LI a link to /event/_id
 			d += f'<li><a href="/event/{ event.pk }">{event.title}</a></li>'
-			
-			
+		for event in multi_day_event:
+			if event.start_time != event.end_time:
+				d += f'<li><a href="/event/{ event.pk }">{event.title}</a></li>'
 
+			
 		if day != 0:
 			return f"<td><span class='date'>{day}</span><ul> {d} </ul></td>"
 		return '<td></td>'
+
+		# if start_time__day != end_time__day:
+		# 	for event in events_per_day:
+		# 		d += f'<li><a href="/event/{ event.pk }">{event.title}</a></li>'
+
 
 	# formats a week as a tr 
 	def formatweek(self, theweek, events):
