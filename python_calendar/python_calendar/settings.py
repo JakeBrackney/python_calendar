@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django_extensions',
 ]
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/calendar'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
