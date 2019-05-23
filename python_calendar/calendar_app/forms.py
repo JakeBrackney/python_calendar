@@ -1,28 +1,25 @@
 from django import forms
 from .models import Event
+from datetime import datetime, date
+from django.forms import ModelForm, DateInput
+import datetime
 
-class EventForm(forms.ModelForm):
+class EventForm(ModelForm):
 
     class Meta:
         model = Event
-        fields = ('title', 'startDate', 'startTime', 'endDate', 'endTime', 'description', 'location')
+        fields = ('title', 'start_time', 'end_time', 'description', 'location')
 
-    startDate = forms.DateField(
-    widget=forms.DateInput(format='%m/%d/%Y'),
-    input_formats=('%m/%d/%Y', )
+    start_time = forms.DateTimeField(initial=(datetime.datetime.now().time),
+    widget=forms.DateTimeInput(attrs={'type':'datetime-local', 'value':'datetime.now().time', 'class':"inputs"}, format='%m/%d/%Y %I:%M %p')
     )
 
-    startTime = forms.TimeField(
-    widget=forms.TimeInput(format='%I:%M %p'),
-    input_formats=('%I:%M %p', )
+    end_time = forms.DateTimeField(initial=(datetime.datetime.now().time),
+    widget=forms.DateTimeInput(attrs={'type': 'datetime-local', 'class':"inputs"}, format='%m/%d/%Y %I:%M %p')
     )
 
-    endDate = forms.DateField(
-    widget=forms.DateInput(format='%m/%d/%Y'),
-    input_formats=('%m/%d/%Y', )
-    )
-
-    endTime = forms.TimeField(
-    widget=forms.TimeInput(format='%I:%M %p'),
-    input_formats=('%I:%M %p', )
-    )
+    def __init__(self, *args, **kwargs):
+        super(EventForm, self).__init__(*args, **kwargs)
+        # input_formats to parse HTML5 datetime-local input to datetime field
+        self.fields['start_time'].input_formats = ('%Y-%m-%dT%H:%M',)
+        self.fields['end_time'].input_formats = ('%Y-%m-%dT%H:%M',)
