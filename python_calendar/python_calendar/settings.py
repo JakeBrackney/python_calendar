@@ -129,3 +129,6 @@ STATIC_URL = '/calendar_app/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+STATIC_ROOT = "/Users/lindsayurchyk/wdi/sideProjects/python_calendar/static_root"
+
