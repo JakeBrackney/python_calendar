@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import dj_database_url
-from decouple import config
+# from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -47,6 +47,7 @@ LOGIN_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -89,11 +90,11 @@ WSGI_APPLICATION = 'python_calendar.wsgi.application'
 #     }
 # }
 
-DEBUG = config('DEBUG', default=False, cast=bool)
+# DEBUG = config('DEBUG', default=False, cast=bool)
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=config('DATABASE_URL')
+        default='postgres://denkwxvoukybmn:0c858cc91bb785aa9123e8d4f6cf246bfe62b6d36e6cf914046809c87f390bae@ec2-107-20-230-70.compute-1.amazonaws.com:5432/d2k37gdn3ilb46'
     )
 }
 
@@ -141,4 +142,4 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = "/Users/lindsayurchyk/wdi/sideProjects/python_calendar/python_calendar/static_root"
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
