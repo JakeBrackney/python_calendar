@@ -49,8 +49,9 @@ def next_month(d):
     month = 'month=' + str(next_month.year) + '-' + str(next_month.month)
     return month
 
+
 def index(request):
-    return render(request, 'calendar_app/base.html')
+    return render(request, 'calendar_app/calendar.html')
 
 def signup(request):
     if request.method == 'POST':
