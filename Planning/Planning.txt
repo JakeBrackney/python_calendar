@@ -1,1 +1,5 @@
 django admin U/P admin/calendar
+
+5/28
+ - Event displays only on start day and end day
+ - Authorization - events show up under any account.
